@@ -2,133 +2,145 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashley Evelyn | Personal Website</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav class="container">
-            <h1 class="logo">My Bio</h1>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="bio" class="section">
-        <div class="container">
-            <div class="bio-card">
-                <img src="me.jpg" alt="Profile Photo" class="bio-photo">
-
-                <div class="bio-text">
-                    <h2>Ashley Evelyn</h2>
-                    <p class="bio-title"><em>"welcome to my page."</em></p>
-                    <p>
-                        Hi, I'm Ashley. 
-                        I’m a college student majoring in Information System at Batam International University.
-                    </p>
+        <!-- Dark / Light Toggle -->
+        <div class="toggle-container">
+            <div class="mode-toggle" id="mode-toggle">
+                <div class="toggle-circle">
+                    <span class="icon">☀</span>
                 </div>
             </div>
         </div>
-    </section>
 
+    <div class="container">
 
+        <!-- Profile -->
+        <section class="profile fade-in">
+            <img src="me.jpg" alt="Profile Photo" class="profile-img">
+            <h1>Ashley Evelyn</h1>
+            <p class="subtitle">Dreamer • Creative • Designer</p>
+        </section>
 
-    <!-- About -->
-    <div class="about">
-        <h2>My Bio</h2>
-        <table>
-            <tr>
-                <th>Name</th>
-                <td>Ashley Evelyn</td>
-            </tr>
-            <tr>
-                <th>Date of Birth</th>
-                <td>September 15, 2007</td>
-            </tr>
-            <tr>
-                <th>Birthplace</th>
-                <td>Tanjung Pinang, Indonesia</td>
-            </tr>
-            <tr>
-                <th>Status</th>
-                <td>Student</td>
-            </tr>
-            <tr>
-                <th>Hobbies</th>
-                <td>Listening to music</td>
-            </tr>
-        </table>
+        <!-- Bio -->
+        <section class="bio slide-up">
+            <h2>About Me</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>Ashley Evelyn</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <th>Birthdate</th>
+                    <td>September 15, 2007</td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>Batam, Riau Islands, Indonesia</td>
+                </tr>
+                <tr>
+                    <th>Interests</th>
+                    <td>Art, Music, Games</td>
+                </tr>
+                <tr>
+                    <th>Major</th>
+                    <td>Information System</td>
+                </tr>
+                <tr>
+                    <th>University</th>
+                    <td>Universitas Internasional Batam</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Social -->
+        <section class="contact fade-in">
+            <h2>Contacts</h2>
+            <div class="social-links">
+                <a href="https://instagram.com/ashley_evel_" target="_blank">Instagram</a>
+                <a href="https://youtube.com/@ashendust159" target="_blank">YouTube</a>
+                <a href="mailto:ashleyevelyn1509@gmail.com" target="_blank">Email</a>
+            </div>
+        </section>
+
+        <!-- Ask Box -->
+        <section class="ask-box slide-up">
+            <h2>Ask Me Anything</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Question..." required></textarea>
+                <button type="submit">Send ✨</button>
+            </form>
+        </section>
+
     </div>
 
-    <!-- Projects -->
-    <section id="projects" class="section alt">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects">
-                <div class="card">
-                    <h3>Project One</h3>
-                    <img src="computers.png" alt="programming" width="300" height="200">
-                    <p>Programming...</p>
-                </div>
-                <div class="card">
-                    <h3>Project Two</h3>
-                    <img src="coding.jpg" alt="coding" width="300" height="200">
-                    <p>Coding...</p>
-                </div>
-                <div class="card">
-                    <h3>Project Three</h3>
-                    <img src="animation.jpg" alt="animation" width="300" height="200">
-                    <p>Animation...</p>
-                </div>
+        <!-- Clean Music Player -->
+        <div class="music-player">
+            <button id="play-btn">▶</button>
+
+            <div class="wave">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p><strong>Email   :</strong> ashleyevelyn1509@gmail.com</p>
-            <p><strong>Phone   :</strong> +62 857-3304-0252</p>
-            <p><strong>Home Address :</strong> Cahaya Garden Tahap 2, Blok L No.15, Sadai, Bengkong, Batam</p>
-        </div>
-    </section>
+        <audio id="audio">
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
 
-    <!-- Social Links -->
-    <section id="social-links" class="section">
-        <div class="container">
-            <a href="file:///C:/Users/ASHLEY/Documents/website_by_ash/index.html" target="_blank">Card</a>
-            <a href="https://youtube.com/@ashendust159" target="_blank">YouTube</a>
-            <a href="https://instagram.com/ashley_evel_" target="_blank">Instagram</a>
-        </div>
-    </section>
+<script>
+    const toggle = document.getElementById("mode-toggle");
+    const icon = document.querySelector(".icon");
 
-    <!-- Map -->
-    <section id="map" class="section">
-        <div class="container">
-            <h1>Location</h1>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0566801802393!2d104.0004679742389!3d1.1195484622743495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98be09646b351%3A0x36a826082690c786!2sUniversitas%20Internasional%20Batam!5e0!3m2!1sid!2sid!4v1771795357656!5m2!1sid!2sid" width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
+    toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        toggle.classList.toggle("active");
 
-    <!-- Ask Box -->
-    <div class="ask-box">
-        <h2>Ask a Question</h2>
-        <textarea placeholder="Type your question here..."></textarea>
-        <button>Submit</button>
-    </div>
+        if(document.body.classList.contains("dark-mode")){
+            icon.textContent = "🌙";
+        } else {
+            icon.textContent = "☀";
+        }
+    });
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Universitas Internasional Batam. All rights reserved.</p>
-    </footer>
+    const audio = document.getElementById("audio");
+    const playBtn = document.getElementById("play-btn");
+    const wave = document.querySelector(".wave");
+
+    playBtn.addEventListener("click", () => {
+        if(audio.paused){
+            audio.play();
+            playBtn.textContent = "❚❚";
+            wave.classList.add("active");
+        } else {
+            audio.pause();
+            playBtn.textContent = "▶";
+            wave.classList.remove("active");
+        }
+    });
+
+    /* Cursor Glow Trail */
+    const cursor = document.createElement("div");
+    cursor.classList.add("cursor-glow");
+    document.body.appendChild(cursor);
+
+    document.addEventListener("mousemove", e => {
+        cursor.style.left = e.pageX + "px";
+        cursor.style.top = e.pageY + "px";
+    });
+</script>
 
 </body>
 </html>
