@@ -1,273 +1,333 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    transition: all 0.3s ease;
 }
 
-/* Base Styles */
+/* LIGHT MODE (Default Pastel) */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    color: #333;
+    background: linear-gradient(135deg, #ffd6e0, #cde7ff);
+    color: #444;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
 }
 
 .container {
     width: 90%;
-    max-width: 1100px;
-    margin: auto;
+    max-width: 800px;
 }
 
-/* Navigation */
-header {
-    background: #9874d3;
-    color: #fff;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-}
-
-.logo {
-    font-size: 1.5rem;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Hero */
-.hero {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 5rem 0;
+.profile {
     text-align: center;
+    margin-bottom: 50px;
+    animation: float 4s ease-in-out infinite;
 }
 
-.hero h2 {
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    margin-top: 15px;
     font-size: 2.5rem;
 }
 
-.hero p {
-    margin: 1rem 0;
+.subtitle {
+    opacity: 0.7;
 }
 
-.btn {
-    display: inline-block;
-    background: #fff;
-    color: #333;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Bio Card */
-.bio-card {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: auto;
-}
-
-.bio-photo {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #667eea;
-}
-
-.bio-text h2 {
-    margin-bottom: 0.25rem;
-}
-
-.bio-title {
-    font-weight: bold;
-    color: #667eea;
-    margin-bottom: 0.75rem;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .bio-card {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .bio-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* About */
-.about {
-    background: #ffffff;
-    padding: 30px 40px;
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.about h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #333;
+.bio, .contact, .ask-box {
+    margin-bottom: 50px;
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    background: rgba(255,255,255,0.6);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 th, td {
-    text-align: left;
-    padding: 12px 10px;
+    padding: 15px;
 }
 
 th {
-    color: #555;
-    font-weight: 600;
-    width: 40%;
-}
-
-td {
-    color: #222;
-    font-weight: 500;
-}
-
-tr {
-    border-bottom: 1px solid #eee;
-    transition: background 0.3s ease;
+    background: rgba(255,255,255,0.8);
 }
 
 tr:hover {
-    background: #f5f7ff;
+    background: rgba(255,255,255,0.9);
 }
 
-tr:last-child {
-    border-bottom: none;
+.social-links {
+    text-align: center;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: #ffffffaa;
+    text-decoration: none;
+    color: #444;
+}
+
+.social-links a:hover {
+    background: #ffb6c1;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.ask-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+button {
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: #ffb6c1;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff8fab;
+}
+
+/* ===============================
+   ANIMATED DARK/LIGHT TOGGLE
+================================= */
+
+.toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+}
+
+.mode-toggle {
+    width: 70px;
+    height: 35px;
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.toggle-circle {
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    font-size: 14px;
+}
+
+.mode-toggle.active {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+}
+
+.mode-toggle.active .toggle-circle {
+    transform: translateX(35px) rotate(360deg);
+}
+
+/* Smooth background transition */
+body {
+    transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* DARK MODE */
+.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #eee;
+}
+
+.dark-mode table {
+    background: rgba(0,0,0,0.4);
+}
+
+.dark-mode th {
+    background: rgba(0,0,0,0.6);
+}
+
+.dark-mode .social-links a {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.dark-mode button {
+    background: #6c63ff;
+}
+
+/* ===============================
+   CLEAN MINIMAL MUSIC PLAYER
+================================= */
+
+.music-player {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 18px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    animation: float 5s ease-in-out infinite;
+}
+
+.music-player button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #ffb6c1;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.music-player button:hover {
+    transform: scale(1.1);
+    background: #ff8fab;
+}
+
+.track-info {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===============================
+   SOUND WAVE ANIMATION
+================================= */
+
+.wave {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    height: 20px;
+}
+
+.wave span {
+    width: 4px;
+    height: 10px;
+    background: #ff8fab;
+    border-radius: 10px;
+    animation: bounce 1s infinite ease-in-out;
+    animation-play-state: paused;
+}
+
+.wave span:nth-child(2) { animation-delay: 0.2s; }
+.wave span:nth-child(3) { animation-delay: 0.4s; }
+.wave span:nth-child(4) { animation-delay: 0.6s; }
+
+.wave.active span {
+    animation-play-state: running;
+}
+
+@keyframes bounce {
+    0%,100% { height: 8px; }
+    50% { height: 20px; }
+}
+
+.dark-mode .wave span {
+    background: #6c63ff;
+}
+
+/* Dark Mode Player */
+.dark-mode .music-player {
+    background: rgba(0,0,0,0.4);
+}
+
+.dark-mode .music-player button {
+    background: #6c63ff;
+}
+
+/* Button animation when playing */
+.music-player button:active {
+    transform: scale(0.9);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 2s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 1.5s ease forwards;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-@media (max-width: 480px) {
-    .about {
-        width: 90%;
-        padding: 20px;
-    }
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
-/* Projects */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
-.card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* ===============================
+   CURSOR GLOW TRAIL
+================================= */
+
+.cursor-glow {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, #ffb6c1 0%, rgba(255,182,193,0) 70%);
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s ease-out;
+    z-index: 9999;
 }
 
-/* Social Links */
-.social-links a {
-  display: inline-block;
-  margin: 0 10px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  position: relative;
-}
-
-.social-links a::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: #fff;
-  width: 0;
-  transition: width 0.3s;
-  margin: auto;
-}
-
-.social-links a:hover::after {
-  width: 100%;
-}
-
-/* Ask Box */
-.ask-box {
-  background: white;
-  padding: 30px;
-  width: 350px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.ask-box input,
-.ask-box textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #eee;
-  border-radius: 8px;
-  outline: none;
-  transition: 0.3s;
-}
-
-.ask-box input:focus,
-.ask-box textarea:focus {
-  border-color: #4CAF50;
-}
-
-.ask-box button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.ask-box button:hover {
-  background-color: #45a049;
-}
-
-/* Footer */
-footer {
-    background: #9874d3;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+.dark-mode .cursor-glow {
+    background: radial-gradient(circle, #6c63ff 0%, rgba(108,99,255,0) 70%);
 }
