@@ -26,6 +26,14 @@
             <p class="subtitle">Dreamer • Creative • Designer</p>
         </section>
 
+        <section id="home" class="intro-card fade-in">
+            <h2>Welcome✨</h2>
+            <p class="intro-text">
+            A college student majoring in Information System at Universitas Internasional Batam.
+            </p>
+        </section>
+
+
         <!-- Bio -->
         <section class="bio slide-up">
             <h2>About Me</h2>
@@ -86,7 +94,13 @@
 
         <!-- Clean Music Player -->
         <div class="music-player">
+            <button id="prev-btn">⏮</button>
             <button id="play-btn">▶</button>
+            <button id="next-btn">⏭</button>
+
+            <div class="track-info">
+                <span id="track-name">Song Title</span>
+            </div>
 
             <div class="wave">
                 <span></span>
@@ -97,10 +111,13 @@
         </div>
 
         <audio id="audio">
-            <source src="music.mp3" type="audio/mpeg">
         </audio>
 
 <script>
+    /* =========================
+       DARK / LIGHT TOGGLE
+    ========================== */
+
     const toggle = document.getElementById("mode-toggle");
     const icon = document.querySelector(".icon");
 
@@ -115,21 +132,79 @@
         }
     });
 
+    /* =========================
+       PLAYLIST SYSTEM
+    ========================== */
+
+    const songs = [
+        {
+            name: "1987 Cosmic Overture",
+            src: "1987 Cosmic Overture.mp3"
+        },
+        {
+            name: "Float Play (lo-fi)",
+            src: "float play.mp3"
+        },
+        {
+            name: "are you lost",
+            src: "are you lost.mp3"
+        }
+    ];
+
     const audio = document.getElementById("audio");
     const playBtn = document.getElementById("play-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const prevBtn = document.getElementById("prev-btn");
+    const trackName = document.getElementById("track-name");
     const wave = document.querySelector(".wave");
 
+    let currentSong = 0;
+
+    function loadSong(index) {
+        audio.src = songs[index].src;
+        trackName.textContent = songs[index].name;
+    }
+
+    function playSong() {
+        audio.play();
+        playBtn.textContent = "❚❚";
+        wave.classList.add("active");
+    }
+
+    function pauseSong() {
+        audio.pause();
+        playBtn.textContent = "▶";
+        wave.classList.remove("active");
+    }
+
     playBtn.addEventListener("click", () => {
-        if(audio.paused){
-            audio.play();
-            playBtn.textContent = "❚❚";
-            wave.classList.add("active");
+        if (audio.paused) {
+            playSong();
         } else {
-            audio.pause();
-            playBtn.textContent = "▶";
-            wave.classList.remove("active");
+            pauseSong();
         }
     });
+
+    nextBtn.addEventListener("click", () => {
+        currentSong = (currentSong + 1) % songs.length;
+        loadSong(currentSong);
+        playSong();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        currentSong = (currentSong - 1 + songs.length) % songs.length;
+        loadSong(currentSong);
+        playSong();
+    });
+
+    audio.addEventListener("ended", () => {
+        currentSong = (currentSong + 1) % songs.length;
+        loadSong(currentSong);
+        playSong();
+    });
+
+    loadSong(currentSong);
+
 
     /* Cursor Glow Trail */
     const cursor = document.createElement("div");
