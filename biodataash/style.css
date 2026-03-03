@@ -52,6 +52,32 @@ h1 {
     margin-bottom: 50px;
 }
 
+/* ===============================
+   INTRO CARD
+================================= */
+
+.intro-card {
+    margin-top: 100px;
+    margin-bottom: 60px;
+    padding: 40px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+.intro-text {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.dark-mode .intro-card {
+    background: rgba(0,0,0,0.4);
+}
+
 table {
     width: 100%;
     background: rgba(255,255,255,0.6);
@@ -215,20 +241,24 @@ body {
 }
 
 .music-player button {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     border: none;
     background: #ffb6c1;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
 .music-player button:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     background: #ff8fab;
+}
+
+.dark-mode .music-player button {
+    background: #6c63ff;
 }
 
 .track-info {
