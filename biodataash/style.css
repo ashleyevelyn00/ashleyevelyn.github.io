@@ -15,6 +15,49 @@ body {
     padding: 40px;
 }
 
+/* Sidebar */
+.menu-btn{
+    font-size:25px;
+    position:fixed;
+    left:20px;
+    top:20px;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+.sidebar{
+    position:fixed;
+    left:-250px;
+    top:0;
+    width:200px;
+    height:100%;
+    background:#ffb6c1;
+    padding-top:60px;
+    transition:0.3s;
+}
+
+.sidebar h2{
+  color:white;
+  margin-bottom:30px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    padding:15px;
+    text-decoration:none;
+}
+
+.sidebar a:hover{
+  background:#ff8fab;
+  color:white;
+}
+
+.sidebar.active{
+    left:0;
+}
+
 .container {
     width: 90%;
     max-width: 800px;
@@ -27,8 +70,8 @@ body {
 }
 
 .profile-img {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     border: 5px solid white;
     object-fit: cover;
@@ -204,12 +247,24 @@ body {
     color: #eee;
 }
 
+.dark-mode .sidebar {
+    background: rgba(0,0,0,0.4);
+}
+
+.dark-mode .sidebar a:hover {
+    background: rgba(100, 44, 242, 0.9);
+}
+
 .dark-mode table {
     background: rgba(0,0,0,0.4);
 }
 
 .dark-mode th {
     background: rgba(0,0,0,0.6);
+}
+
+.dark-mode tr:hover {
+    background: rgba(47, 39, 69, 0.9);
 }
 
 .dark-mode .social-links a {
