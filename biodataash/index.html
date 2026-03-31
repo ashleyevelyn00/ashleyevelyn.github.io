@@ -4,50 +4,49 @@
     <meta charset="UTF-8">
     <title>Ashley Evelyn | Personal Website</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-        <!-- Dark / Light Toggle -->
-        <div class="toggle-container">
-            <div class="mode-toggle" id="mode-toggle">
-                <div class="toggle-circle">
-                    <span class="icon">🔆</span>
-                </div>
-            </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#profile"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#bio"><i class="fas fa-feather"></i> Bio</a></li>
+            <li><a href="#academic"><i class="fas fa-graduation-cap"></i> Academic</a></li>
+            <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+            <li><a href="#movies"><i class="fas fa-heart"></i> Favorites</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="#wireframe"><i class="fa-solid fa-border-all"></i> Wireframe</a></li>
+        </ul>
+        <div class="socials">
+            <a href="https://ashleyevelyn00.github.io" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://youtube.com/@ashendust159" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/ashley_evel_" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
+    </div>
 
-        <!-- Sidebar -->
-        <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-        <div class="sidebar" id="sidebar">
-            <h2>MySite</h2>
-            <a href="#home">Home</a>
-            <a href="#bio">Bio</a>
-            <a href="#contacts">Contacts</a>
-            <a href="#ask-box">Ask-box</a>
-        </div>
-
-
-    <div class="container">
+    <!-- Main Content -->
+    <div class="main">
 
         <!-- Profile -->
-        <section id="home" class="profile fade-in">
-            <img src="me.jpg" alt="Profile Photo" class="profile-img">
-            <h1>Ashley Evelyn</h1>
-            <p class="subtitle">Dreamer • Creative • Designer</p>
+        <section id="profile" class="card profile-card">
+            <img src="me.jpg" alt="Profile Picture">
+            <div class="profile-text">
+                <h1>Ashley Evelyn</h1>
+                <p>Dreamer | Designer | Student</p>
+            </div>
         </section>
-
-        <section class="intro-card fade-in">
-            <h2>Welcome✨</h2>
-            <p class="intro-text">
-            A college student majoring in Information System at Universitas Internasional Batam.
-            </p>
-        </section>
-
 
         <!-- Bio -->
-        <section id="bio" class="bio slide-up">
+        <section id="bio" class="card">
             <h2>About Me</h2>
+            <p>
+                Hello! I'm a college student majoring in Information System at Universitas Internasional Batam.
+            </p>
             <table>
                 <tr>
                     <th>Name</th>
@@ -66,8 +65,12 @@
                     <td>Batam, Riau Islands, Indonesia</td>
                 </tr>
                 <tr>
+                    <th>Hobbies</th>
+                    <td>Writing, Listening to Music, Playing Video Games</td>
+                </tr>
+                <tr>
                     <th>Interests</th>
-                    <td>Art, Music, Games</td>
+                    <td>Art and Design</td>
                 </tr>
                 <tr>
                     <th>Major</th>
@@ -80,159 +83,115 @@
             </table>
         </section>
 
-        <!-- Social -->
-        <section id="contacts" class="contact fade-in">
-            <h2>Contacts</h2>
-            <div class="social-links">
-                <a href="https://instagram.com/ashley_evel_" target="_blank">Instagram</a>
-                <a href="https://youtube.com/@ashendust159" target="_blank">YouTube</a>
-                <a href="mailto:ashleyevelyn1509@gmail.com" target="_blank">Email</a>
+        <!-- Academic -->
+        <section id="academic" class="card">
+            <h2>Academic Background</h2>
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th>Institution</th>
+                    <th>Level</th>
+                </tr>
+                <tr>
+                    <td>2011 - 2013</td>
+                    <td>TK Sunshine</td>
+                    <td>Kindergarten</td>
+                </tr>
+                <tr>
+                    <td>2013 - 2019</td>
+                    <td>SDS Kristen Sion</td>
+                    <td>Elementary</td>
+                </tr>
+                <tr>
+                    <td>2019 - 2022</td>
+                    <td>SMP Katolik Tanjungpinang</td>
+                    <td>Junior High</td>
+                </tr>
+                <tr>
+                    <td>2022 - 2025</td>
+                    <td>SMAS Katolik Santa Maria Tanjungpinang</td>
+                    <td>Senior High</td>
+                </tr>
+                <tr>
+                    <td>2025 - now</td>
+                    <td>Universitas Nasional Batam</td>
+                    <td>University</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="card">
+            <h2>My Projects</h2>
+            <div class="container">
+                <div class="box">
+                    <img src="figma.png">
+                    <h3>Mobile App Design</h3>
+                    <p>Creating a prototype of a mobile shopping app with Figma.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Ask Box -->
-        <section id="ask-box" class="ask-box slide-up">
-            <h2>Ask Me Anything</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Question..." required></textarea>
-                <button type="submit">Send ✨</button>
+        <!-- Fav Movies -->
+        <section id="movies" class="card">
+            <h2>Favorite Movies & Anime</h2>
+            <div class="container">
+                <div class="card">
+                    <img src="film1.jpg" alt="Movie 1">
+                    <h3>Spiderman Across the Spiderverse</h3>
+                    <p>Action, Superhero</p>
+                </div>
+                <div class="card">
+                    <img src="film2.jpg" alt="Movie 2">
+                    <h3>A Silent Voice</h3>
+                    <p>Drama</p>
+                </div>
+                <div class="card">
+                    <img src="film3.jpg" alt="Movie 3">
+                    <h3>Jibaku Shounen Hanako-kun</h3>
+                    <p>Supernatural, Shounen</p>
+                </div>
+                <div class="card">
+                    <img src="film4.jpg" alt="Movie 4">
+                    <h3>Trigun</h3>
+                    <p>Action, Sci-Fi</p>
+                </div>
+                <div class="card">
+                    <img src="film5.jpg" alt="Movie 5">
+                    <h3>Mob Psycho 100</h3>
+                    <p>Shounen, Slice of Life</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="card">
+            <h2>Contact Me</h2>
+            <table>
+                <tr>
+                    <th>Email</th>
+                    <td>ashleyevelyn1509@gmail.com</td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td>+62 857 3304 0252</td>
+                </tr>
+            </table>
+            <form action="mailto:you@email.com" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit">Send</button>
             </form>
         </section>
 
+        <!-- PDF Viewer -->
+        <section id="wireframe" class="card">
+            <h2>Wireframe</h2>
+            <a href="https://instagram.com/ashley_evel_" target="_blank">View PDF</a>
+        </section>
+
     </div>
-
-        <!-- Clean Music Player -->
-        <div class="music-player">
-            <button id="prev-btn">⏮</button>
-            <button id="play-btn">▶</button>
-            <button id="next-btn">⏭</button>
-
-            <div class="track-info">
-                <span id="track-name">Song Title</span>
-            </div>
-
-            <div class="wave">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-
-        <audio id="audio">
-        </audio>
-
-<script>
-    /* =========================
-       DARK / LIGHT TOGGLE
-    ========================== */
-
-    const toggle = document.getElementById("mode-toggle");
-    const icon = document.querySelector(".icon");
-
-    toggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        toggle.classList.toggle("active");
-
-        if(document.body.classList.contains("dark-mode")){
-            icon.textContent = "🌙";
-        } else {
-            icon.textContent = "🔆";
-        }
-    });
-
-    /* SIDEBAR */
-    function toggleSidebar(){
-    document.getElementById("sidebar").classList.toggle("active");
-    }
-    
-
-    /* =========================
-       PLAYLIST SYSTEM
-    ========================== */
-
-    const songs = [
-        {
-            name: "1987 Cosmic Overture",
-            src: "1987 Cosmic Overture.mp3"
-        },
-        {
-            name: "Float Play (lo-fi)",
-            src: "float play.mp3"
-        },
-        {
-            name: "are you lost",
-            src: "are you lost.mp3"
-        }
-    ];
-
-    const audio = document.getElementById("audio");
-    const playBtn = document.getElementById("play-btn");
-    const nextBtn = document.getElementById("next-btn");
-    const prevBtn = document.getElementById("prev-btn");
-    const trackName = document.getElementById("track-name");
-    const wave = document.querySelector(".wave");
-
-    let currentSong = 0;
-
-    function loadSong(index) {
-        audio.src = songs[index].src;
-        trackName.textContent = songs[index].name;
-    }
-
-    function playSong() {
-        audio.play();
-        playBtn.textContent = "❚❚";
-        wave.classList.add("active");
-    }
-
-    function pauseSong() {
-        audio.pause();
-        playBtn.textContent = "▶";
-        wave.classList.remove("active");
-    }
-
-    playBtn.addEventListener("click", () => {
-        if (audio.paused) {
-            playSong();
-        } else {
-            pauseSong();
-        }
-    });
-
-    nextBtn.addEventListener("click", () => {
-        currentSong = (currentSong + 1) % songs.length;
-        loadSong(currentSong);
-        playSong();
-    });
-
-    prevBtn.addEventListener("click", () => {
-        currentSong = (currentSong - 1 + songs.length) % songs.length;
-        loadSong(currentSong);
-        playSong();
-    });
-
-    audio.addEventListener("ended", () => {
-        currentSong = (currentSong + 1) % songs.length;
-        loadSong(currentSong);
-        playSong();
-    });
-
-    loadSong(currentSong);
-
-
-    /* Cursor Glow Trail */
-    const cursor = document.createElement("div");
-    cursor.classList.add("cursor-glow");
-    document.body.appendChild(cursor);
-
-    document.addEventListener("mousemove", e => {
-        cursor.style.left = e.pageX + "px";
-        cursor.style.top = e.pageY + "px";
-    });
-</script>
 
 </body>
 </html>
